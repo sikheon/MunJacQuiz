@@ -1,0 +1,71 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #E6EEF8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    position: relative;
+}
+.title {
+    font-size: 75px;
+    font-weight: bold;
+    position: absolute;
+    top: 40px;
+    left: 75px;
+}
+.description {
+    font-size: 75px;
+    font-weight: bold;
+    text-align: left;
+    margin-bottom: 50px;
+    padding: 5%;
+}
+.login-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%; /* 폼의 너비를 더 넓게 설정 */
+    max-width: 600px; /* 최대 너비 설정 */
+    padding: 5%;
+}
+.form-group {
+    width: 100%; /* 입력 필드의 너비를 더 넓게 설정 */
+    margin-bottom: 20px;
+}
+.form-control {
+    width: 80%; /* 입력 필드의 너비를 더 넓게 설정 */
+    padding: 15px; /* 패딩을 늘려서 더 큰 입력 필드 생성 */
+    margin: 10px 0; /* 간격을 늘림 */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 18px; /* 글자 크기 조정 */
+}
+.login-button {
+    width: 85%; /* 버튼의 너비를 더 넓게 설정 */
+    padding: 15px; /* 패딩을 늘려서 더 큰 버튼 생성 */
+    background-color: #8CAFD8;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-size: 18px; /* 글자 크기 조정 */
+    cursor: pointer;
+    margin-top: 20px;
+}
+.login-button:hover {
+    background-color: #7596C7;
+}
+.create-account {
+    margin-top: 10px;
+    font-size: 18px; /* 글자 크기 조정 */
+    color: #888;
+}
+.create-account a {
+    color: gray; /* 링크 색상 변경 */
+    text-decoration: none; /* 밑줄 없애기 */
+}
+.error {
+    color: red;
+    font-size: 14px;
+}
