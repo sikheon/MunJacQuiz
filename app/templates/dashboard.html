@@ -82,6 +82,9 @@
                                         <img src="{{ url_for('static', filename=collection.thumbnail_url) }}" alt="{{ collection.name }}">
                                     </div>
                                     <p>{{ collection.name }}</p>
+                                    <button class="bookmark-btn" data-id="{{ collection.id }}" data-bookmarked="{{ collection in bookmarked_collections }}">
+                                        <i class="fas fa-bookmark"></i>
+                                    </button>
                                 </a>
                             </div>
                         {% endfor %}    
@@ -102,6 +105,9 @@
                                     </div>
                                     <p>{{ collection.name }}</p>
                                 </a>
+                                <button class="bookmark-btn" data-id="{{ collection.id }}" data-bookmarked="{{ collection in bookmarked_collections }}">
+                                    <i class="fas fa-bookmark"></i>
+                                </button>
                             </div>
                         {% endfor %}    
                     {% else %}
@@ -110,24 +116,29 @@
                 </div>
             </div>
             <div id="bookmarked" class="cards">
-                <h2 class="title-text">모든 맞추기</h2>
+                <h2 class="title-text">북마크된 맞추기</h2>
                 <div id="cards-position">
-                    {% if quiz_collections %}
-                        {% for collection in quiz_collections %}
-                            <div class="card">
+                    {% if bookmarked_collections %}
+                        {% for collection in bookmarked_collections %}
+                            <div class="card" id="bookmark-card-{{ collection.id }}">
                                 <a href="{{ url_for('main.game_start', quiz_id=collection.id) }}">
                                     <div class="card-image">
                                         <img src="{{ url_for('static', filename=collection.thumbnail_url) }}" alt="{{ collection.name }}">
                                     </div>
                                     <p>{{ collection.name }}</p>
                                 </a>
+                                <button class="bookmark-btn bookmarked" data-id="{{ collection.id }}" data-bookmarked="true">
+                                    <i class="fas fa-bookmark"></i>
+                                </button>
                             </div>
-                        {% endfor %}    
+                        {% endfor %}
                     {% else %}
-                        <p>텅 비었습니다</p>
+                        <p id="no-bookmarks-message" style="display: none;">북마크된 퀴즈가 없습니다.</p>
                     {% endif %}
                 </div>
             </div>
+            
+            
         </div>
     </div>
     <script src="{{ url_for('static', filename='js/main.js') }}"></script>

@@ -1,6 +1,6 @@
 from flask import render_template, request, redirect, url_for, flash, session, jsonify
 from . import main
-from ..models import db, User, QuizCollection, Quiz
+from ..models import db, User, QuizCollection, Quiz, Bookmark
 from ..forms import SignupForm , LoginForm
 from functools import wraps
 
@@ -66,12 +66,33 @@ def check_nickname():
 def dashboard():
     recommended_quiz_collections = QuizCollection.query.order_by(QuizCollection.views.desc()).limit(12).all()
     all_quiz_collections = QuizCollection.query.all()
+    
+    # 현재 사용자의 북마크된 퀴즈 컬렉션 가져오기
+    user = User.query.filter_by(email=session['email']).first()
+    bookmarked_collections = [bookmark.quiz_collection for bookmark in user.bookmarks]
+    
     return render_template('dashboard.html', 
                            recommended_quiz_collections=recommended_quiz_collections,
                            all_quiz_collections=all_quiz_collections,
-                           quiz_collections=all_quiz_collections)
+                           bookmarked_collections=bookmarked_collections)
 
-@main.route('/game_start', methods=['POST'])
+@main.route('/toggle_bookmark/<int:quiz_collection_id>', methods=['POST'])
+@login_required
+def toggle_bookmark(quiz_collection_id):
+    user = User.query.filter_by(email=session['email']).first()
+    bookmark = Bookmark.query.filter_by(user_id=user.id, quiz_collection_id=quiz_collection_id).first()
+    
+    if bookmark:
+        db.session.delete(bookmark)
+        db.session.commit()
+        return jsonify({'status': 'removed'})
+    else:
+        new_bookmark = Bookmark(user_id=user.id, quiz_collection_id=quiz_collection_id)
+        db.session.add(new_bookmark)
+        db.session.commit()
+        return jsonify({'status': 'added'})
+
+@main.route('/game_start', methods=['GET'])
 @login_required
 def game_start():
     quiz_id = request.args.get('quiz_id', type=int)
