@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>먼작커.io</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="{{ url_for('static', filename='images/L1.png') }}" alt="MJQwiz Logo">
+        </div>
+        <div class="user-info">
+            <span id="username">{{ session.get('nickname', 'User') }}</span>
+            <a href="{{ url_for('main.logout') }}" id="logout-button">Logout</a>
+        </div>
+        <div class="search-container">
+            <form action="/search" method="GET">
+                <input type="text" placeholder="검색" name="query">
+                <button type="submit">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+                        <path fill="currentColor" d="M21.71,20.29l-5-5A7.92,7.92,0,0,0,18,10a8,8,0,1,0-8,8,7.92,7.92,0,0,0,5.29-2.29l5,5a1,1,0,0,0,1.42-1.42ZM10,16a6,6,0,1,1,6-6A6,6,0,0,1,10,16Z" />
+                    </svg>
+                </button>
+            </form>
+        </div>
+    </header>
+    <!-- 메뉴바 삽입 -->
+    <div class="content">
+        <div class="stars">
+            <div class="star"></div>
+  <!-- 반복 -->
+  <div class="star"></div><div class="star"></div>
+  <!-- 반복 -->
+  <div class="star"></div><div class="star"></div>
+  <!-- 반복 -->
+  <div class="star"></div><div class="star"></div>
+  <!-- 반복 -->
+  <div class="star"></div><div class="star"></div>
+  <!-- 반복 -->
+  <div class="star"></div><div class="star"></div>
+  <!-- 반복 -->
+  <div class="star"></div><div class="star"></div>
+  <!-- 반복 -->
+  <div class="star"></div><div class="star"></div>
+  <!-- 반복 -->
+  <div class="star"></div><div class="star"></div>
+  <!-- 반복 -->
+  <div class="star"></div><div class="star"></div>
+  <!-- 반복 -->
+  <div class="star"></div><div class="star"></div>
+  <!-- 반복 -->
+  <div class="star"></div><div class="star"></div>
+  <!-- 반복 -->
+  <div class="star"></div><div class="star"></div>
+  <!-- 반복 -->
+  <div class="star"></div><div class="star"></div>
+  <!-- 반복 -->
+  <div class="star"></div><div class="star"></div>
+  <!-- 반복 -->
+  <div class="star"></div><div class="star"></div>
+  <!-- 반복 -->
+  <div class="star"></div><div class="star"></div>
+  <!-- 반복 -->
+  <div class="star"></div><div class="star"></div>
+  <!-- 반복 -->
+  <div class="star"></div><div class="star"></div>
+  <!-- 반복 -->
+  <div class="star"></div><div class="star"></div>
+  <!-- 반복 -->
+  <div class="star"></div><div class="star"></div>
+  <!-- 반복 -->
+  <div class="star"></div><div class="star"></div>
+  <!-- 반복 -->
+  <div class="star"></div><div class="star"></div>
+  <!-- 반복 -->
+  <div class="star"></div><div class="star"></div>
+  <!-- 반복 -->
+  <div class="star"></div><div class="star"></div>
+  <!-- 반복 -->
+  <div class="star"></div><div class="star"></div>
+  <!-- 반복 -->
+  <div class="star"></div><div class="star"></div>
+  <!-- 반복 -->
+  <div class="star"></div><div class="star"></div>
+  <!-- 반복 -->
+  <div class="star"></div><div class="star"></div>
+  <!-- 반복 -->
+  <div class="star"></div><div class="star"></div>
+  <!-- 반복 -->
+  <div class="star"></div><div class="star"></div>
+  <!-- 반복 -->
+  <div class="star"></div><div class="star"></div>
+  <!-- 반복 -->
+  <div class="star"></div><div class="star"></div>
+  <!-- 반복 -->
+  <div class="star"></div><div class="star"></div>
+  <!-- 반복 -->
+  <div class="star"></div><div class="star"></div>
+  <!-- 반복 -->
+  <div class="star"></div><div class="star"></div>
+  <!-- 반복 -->
+  <div class="star"></div><div class="star"></div>
+  <!-- 반복 -->
+  <div class="star"></div><div class="star"></div>
+  <!-- 반복 -->
+  <div class="star"></div><div class="star"></div>
+  <!-- 반복 -->
+  <div class="star"></div><div class="star"></div>
+  <!-- 반복 -->
+  <div class="star"></div><div class="star"></div>
+  <!-- 반복 -->
+  <div class="star"></div><div class="star"></div>
+  <!-- 반복 -->
+  <div class="star"></div><div class="star"></div>
+  <!-- 반복 -->
+  <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+          </div>
+        <div class="main-container">
+            <div class="tabs">
+                <div class="underline"></div>
+                <div class="tab active" data-target="recommended">
+                    <svg viewBox="0 0 24 24" width="40" height="40">
+                        <defs>
+                            <linearGradient id="halfGradient1" x1="0%" y1="0%" x2="100%">
+                                <stop offset="50%" style="stop-color:#6d6dbf;stop-opacity:1" />
+                                <stop offset="50%" style="stop-color:#ffd34d;stop-opacity:1" />
+                            </linearGradient>
+                        </defs>
+                        <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41 0.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" fill="url(#halfGradient1)" />
+                    </svg>
+                    <span>추천</span>
+                </div>
+                <div class="tab" data-target="all">
+                    <svg viewBox="0 0 24 24" width="40" height="40">
+                        <defs>
+                            <linearGradient id="halfGradient2" x1="0%" y1="0%" x2="100%">
+                                <stop offset="50%" style="stop-color:#6d6dbf;stop-opacity:1" />
+                                <stop offset="50%" style="stop-color:#ffd34d;stop-opacity:1" />
+                            </linearGradient>
+                        </defs>
+                        <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41 0.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" fill="url(#halfGradient2)" />
+                    </svg>
+                    <span>모든</span>
+                </div>
+                <div class="tab" data-target="bookmarked">
+                    <svg viewBox="0 0 24 24" width="40" height="40">
+                        <defs>
+                            <linearGradient id="halfGradient3" x1="0%" y1="0%" x2="100%">
+                                <stop offset="50%" style="stop-color:#6d6dbf;stop-opacity:1" />
+                                <stop offset="50%" style="stop-color:#ffd34d;stop-opacity:1" />
+                            </linearGradient>
+                        </defs>
+                        <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41 0.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" fill="url(#halfGradient3)" />
+                    </svg>
+                    <span>북마크</span>
+                </div>
+            </div>
+            
+            <h2 class="title-text">모든 맞추기</h2>
+            <div id="recommended" class="cards">
+                <div id="cards-position">
+                    {% if quiz_collections %}
+                        {% for collection in quiz_collections %}
+                            <div class="card">
+                                <a href="{{ url_for('main.quiz_detail', quiz_id=collection.id) }}">
+                                    <div class="card-image">
+                                        <img src="{{ url_for('static', filename=collection.thumbnail_url) }}" alt="{{ collection.name }}">
+                                    </div>
+                                    <p>{{ collection.name }}</p>
+                                </a>
+                            </div>
+                        {% endfor %}
+                    {% else %}
+                        <p>텅 비었습니다</p>
+                    {% endif %}
+                </div>
+            </div>
+            
+        </div>
+        
+    </div>
+   
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>

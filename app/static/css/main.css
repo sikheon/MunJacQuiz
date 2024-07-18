@@ -1,159 +1,173 @@
 body {
-    font-family: Arial, sans-serif;
-    background: url('/background.png') no-repeat center center fixed;
-    background-size: cover;
-    color: #fff;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    
-    align-items: center;
-    flex-direction: column;
-  
+  font-family: Arial, sans-serif;
+  background-color: #8AB4F8;
+  color: #333;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow-x: hidden;
 }
+
 header {
-    display: flex;
-    justify-content: flex-end;
-    padding: 10px 20px;
-    width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 20px;
+  width: 100%;
+  background-color: #8AB4F8;
+  box-sizing: border-box;
 }
+
 .user-info {
-    display: flex;
-    align-items: center;
-    font-size: 20px;
-    margin-right: 7px;
+  display: flex;
+  align-items: center;
+  font-size: 30px;
+  color: white;
 }
+
 .user-info img {
-    width: 41.67px;
-    height: 41.67px; 
-    margin-right: 10px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  margin-right: 10px;
 }
+
 #logout-button {
-    color: #fff;
-    text-decoration: none;
-    margin-left: 10px;
+  color: white;
+  text-decoration: none;
+  margin-left: 10px;
 }
+
 .logo {
-    text-align: center;
-    margin-top: 20px;
+  text-align: center;
+  margin: 20px 0;
+  width: 100%;
+  box-sizing: border-box;
 }
+
 .logo img {
-    width: 200px;
-    height: auto;
+  width: 300px;
+  height: 148.35px;
 }
+
 .search-container {
-    display: flex;
-    justify-content: center;
-    margin: 20px 0;
-    position: relative;
-    width: 100%;
-    max-width: 1200px;
+  display: none; /* Hide the search container */
 }
-.search-container form {
-    width: 598px;
-    display: flex;
-    align-items: center;
-    background-color: white;
-    border: 1px solid #ccc;
-    border-radius: 34px;
-    padding: 10px 20px;
-}
-.search-container input[type="text"] {
-    width: calc(100% - 40px);
-    border: none;
-    outline: none;
-    font-size: 16px;
-}
-.search-container button {
-    background: none;
-    border: none;
-    cursor: pointer;
-    padding: 0;
-}
-.search-container button svg {
-    fill: #333;
-}
+
 .main-container {
-    background: white;
-    border-radius: 8px;
-    padding: 20px;
-    margin: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    color: black; /* Change text color inside main container to black */
-    justify-self: center;
-    width: 100%;
-    max-width: 900px;
+  width: 100%;
+  background-color: white;
+  padding-bottom: 20px;
+  box-sizing: border-box;
 }
+
 .tabs {
-    display: flex;
-    justify-content: center;
-    position: relative;
-    margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  background-color: white;
+  padding: 10px 0;
+  border-top: 1px solid #E0E0E0;
+  box-sizing: border-box;
+  position: relative;
 }
+
 .tab {
-    margin: 0 20px;
-    cursor: pointer;
-    font-weight: bold;
-    position: relative;
-    text-align: center;
-    padding-bottom: 10px;
+  margin: 0 20px;
+  cursor: pointer;
+  padding: 10px;
+  font-weight: bold;
+  color: #333;
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
+
 .tab svg {
-    display: block;
-    margin: 0 auto 5px;
+  margin-bottom: 5px;
 }
-.tabs .active {
-    color: inherit; /* Ensure the color remains unchanged */
+
+.tab.active {
+  color: #333;
 }
+
 .underline {
-    position: absolute;
-    bottom: -5px;
-    height: 4px;
-    background-color: #ffd700;
-    width: 0;
-    transition: width 0.3s, transform 0.3s;
+  position: absolute;
+  bottom: 0;
+  height: 3px;
+  width: 0;
+  background-color: #6d6dbf;
+  transition: left 0.3s, width 0.3s;
 }
-.content {
-    padding: 20px;
-    text-align: center;
+
+.title-text {
+  font-size: 24px;
+  font-weight: bold;
+  margin: 20px 0;
+  text-align: center; 
 }
+
 .cards {
-    display: none;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
+  /* display: flex;
+  flex-wrap: wrap; */
+  /* justify-content: center;
+  align-items: center; */ /* 한줄에 4개의 카드가 들어가도록 설정 */
+  background-color: white;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  box-sizing: border-box;
 }
-.cards.active {
-    display: flex;
+
+#cards-position {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(25%, 1fr));
+  gap: 2px;
+  padding: 20px;
+  /* display: flex;
+  justify-content: center;
+  align-items: center; */
 }
+
 .card {
-    background: #333;
-    border-radius: 8px;
-    overflow: hidden;
-    width: calc(33.33% - 20px); /* 3 cards per row with gap */
-    max-width: 200px;
-    text-align: center;
-    text-decoration: none;
-    color: #fff;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
-    padding: 10px;
-    box-sizing: border-box;
+  background-color: #E0E0E0;
+  border-radius: 8px;
+  overflow: hidden;
+  width: calc(100% - 20px); 
+  margin: 10px;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
 }
-.card-image {
-    width: 100%;
-    height: 100px; /* Adjust height as needed */
-    background-color: #000; /* Background color for bounding box */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 10px;
-}
+
 .card img {
-    max-width: 100%;
-    max-height: 100%;
+  width: 100%;
+  height: auto; /* 비율을 유지하며 이미지 크기 조정 */
+  object-fit: cover;
 }
+
 .card p {
-    padding: 5px 0; /* Adjust padding as needed */
-    font-size: 14px; /* Adjust font size as needed */
-    margin: 0;
+  margin: 10px 0;
+  color: #333;
+}
+
+@media (max-width: 1024px) {
+  .card {
+    width: calc(50% - 20px);
+  }
+}
+
+@media (max-width: 768px) {
+  .card {
+    width: calc(50% - 20px);
+  }
+}
+
+@media (max-width: 480px) {
+  .card {
+    width: calc(100% - 20px);
+  }
 }

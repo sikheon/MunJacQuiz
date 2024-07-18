@@ -1,4 +1,6 @@
 body {
+    background: url('../images/background.png') no-repeat center center fixed;
+    background-size: cover;
     font-family: Arial, sans-serif;
     background-color: #E6EEF8;
     display: flex;
@@ -7,65 +9,63 @@ body {
     height: 100vh;
     margin: 0;
     position: relative;
+    
 }
-.title {
-    font-size: 75px;
-    font-weight: bold;
+.container {
     position: absolute;
-    top: 40px;
-    left: 75px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    align-items: center;
 }
-.description {
-    font-size: 75px;
-    font-weight: bold;
-    text-align: left;
-    margin-bottom: 50px;
-    padding: 5%;
+
+.logo {
+    margin-right: 160px;
 }
+
+.logo img {
+    width: 500px; /* 로고 크기 대폭 증가 */
+    height: 247.25;
+}
+
 .login-form {
+    width: 634px;
+    height: 418px; /* 폼 크기 대폭 증가 */
     display: flex;
     flex-direction: column;
-    align-items: center;
-    width: 100%; /* 폼의 너비를 더 넓게 설정 */
-    max-width: 600px; /* 최대 너비 설정 */
-    padding: 5%;
+    align-items: flex-start;
+    background: none; /* 배경 없음 */
 }
-.form-group {
-    width: 100%; /* 입력 필드의 너비를 더 넓게 설정 */
-    margin-bottom: 20px;
-}
+
 .form-control {
-    width: 80%; /* 입력 필드의 너비를 더 넓게 설정 */
-    padding: 15px; /* 패딩을 늘려서 더 큰 입력 필드 생성 */
-    margin: 10px 0; /* 간격을 늘림 */
+    width:  92%;
+    padding: 20px; /* 플레이스 홀더 크기 증가 */
+    margin: 20px 0;
     border: 1px solid #ccc;
     border-radius: 5px;
-    font-size: 18px; /* 글자 크기 조정 */
+    font-size: 18px; /* 텍스트 크기 증가 */
 }
+
 .login-button {
-    width: 85%; /* 버튼의 너비를 더 넓게 설정 */
-    padding: 15px; /* 패딩을 늘려서 더 큰 버튼 생성 */
-    background-color: #8CAFD8;
+    width: 100%;
+    padding: 15px; /* 버튼 크기 증가 */
+    background-color: #7379B7;
     border: none;
     border-radius: 5px;
     color: white;
-    font-size: 18px; /* 글자 크기 조정 */
+    font-size: 18px; /* 텍스트 크기 증가 */
     cursor: pointer;
-    margin-top: 20px;
+    margin-top: 10px;
 }
-.login-button:hover {
-    background-color: #7596C7;
-}
+
 .create-account {
     margin-top: 10px;
-    font-size: 18px; /* 글자 크기 조정 */
-    color: #888;
-}
-.create-account a {
-    color: gray; /* 링크 색상 변경 */
-    text-decoration: none; /* 밑줄 없애기 */
-}
-.error {
-    color: red;
     font-size: 14px;
+    align-self: center;
+}
+
+.create-account a {
+    color: #7379B7;
+    text-decoration: none;
 }

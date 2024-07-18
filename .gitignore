@@ -5,5 +5,4 @@ instance/
 .webassets-cache
 migrations/
 config.py
-wsgi.py
-.env.flaskenv.txt
+.env

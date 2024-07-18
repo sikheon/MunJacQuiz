@@ -1,8 +1,16 @@
 from flask import render_template, request, redirect, url_for, flash, session, jsonify
 from . import main
-from ..models import db, User
+from ..models import db, User, QuizCollection, Quiz
 from ..forms import SignupForm , LoginForm
+from functools import wraps
 
+def login_required(f):
+    @wraps(f)
+    def decorated_function(*args, **kwargs):
+        if 'email' not in session:
+            return redirect(url_for('main.index'))
+        return f(*args, **kwargs)
+    return decorated_function
 
 @main.route('/', methods=['GET', 'POST'])
 def index():
@@ -11,14 +19,17 @@ def index():
         email = form.email.data
         password = form.password.data
         user = User.query.filter_by(email=email).first()
+        
         if user and user.check_password(password):
             session['email'] = email
+            session['nickname'] = user.nickname
             flash('로그인 성공!', 'success')
-            return redirect(url_for('main.main'))
+            return redirect(url_for('main.dashboard'))
         flash('아이디 또는 비밀번호가 올바르지 않습니다.', 'error')
         return redirect(url_for('main.index'))
     
     return render_template('index.html', form=form)
+
 @main.route('/signup', methods=['GET', 'POST'])
 def signup():
     form = SignupForm()
@@ -50,8 +61,34 @@ def check_nickname():
         return jsonify({'available': existing_nickname is None})
     return jsonify({'error': 'Invalid request'}), 400
 
+@main.route('/dashboard')
+@login_required
+def dashboard():
+    quiz_collections = QuizCollection.query.all()
+    return render_template('dashboard.html', quiz_collections=quiz_collections)
 
 
-@main.route('/main')
-def main():
-    return render_template('main.html')
+@main.route('/quiz/<int:quiz_id>')
+@login_required
+def quiz_detail(quiz_id):
+    quiz = Quiz.query.get_or_404(quiz_id)
+    return render_template('quiz_detail.html', quiz=quiz)
+
+
+
+
+
+@main.route('/logout')
+@login_required
+def logout():
+    # 세션에서 사용자 정보 제거
+    session.pop('email', None)
+    session.pop('nickname', None)
+    
+    # 로그아웃 메시지 표시
+    flash('성공적으로 로그아웃되었습니다.', 'success')
+    
+    # 인덱스 페이지로 리다이렉트
+    return redirect(url_for('main.index'))
+
+

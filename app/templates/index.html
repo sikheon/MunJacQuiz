@@ -5,26 +5,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>먼작커.io</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
+
 </head>
 <body>
-    <div class="title">먼작커.io</div>
+    <div class="logo">
+        <img src="{{ url_for('static', filename='images/L1.png') }}" alt="MJQwiz Logo">
+    </div>
+
     <form class="login-form" method="POST" action="{{ url_for('main.index') }}">
         {{ form.hidden_tag() }}
-        <p class="form-group">
-            {{ form.email.label }}<br>
-            {{ form.email(class="form-control") }}<br>
-            {% for error in form.email.errors %}
-                <span class="error">[{{ error }}]</span>
-            {% endfor %}
-        </p>
-        <p class="form-group">
-            {{ form.password.label }}<br>
-            {{ form.password(class="form-control") }}<br>
-            {% for error in form.password.errors %}
-                <span class="error">[{{ error }}]</span>
-            {% endfor %}
-        </p>
-        <button type="submit" class="login-button">{{ form.submit.label }}</button>
+        
+        {{ form.email.label }}
+        {{ form.email(class="form-control") }}
+        {% for error in form.email.errors %}
+            <span class="error">{{ error }}</span>
+        {% endfor %}
+        
+        {{ form.password.label }}
+        {{ form.password(class="form-control") }}
+        {% for error in form.password.errors %}
+            <span class="error">{{ error }}</span>
+        {% endfor %}
+        
+        {{ form.submit(class="login-button", value="Log in") }}
+        
         <div class="create-account">
             <a href="{{ url_for('main.signup') }}">create new account</a>
         </div>
