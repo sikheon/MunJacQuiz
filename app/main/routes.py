@@ -64,16 +64,22 @@ def check_nickname():
 @main.route('/dashboard')
 @login_required
 def dashboard():
-    quiz_collections = QuizCollection.query.all()
-    return render_template('dashboard.html', quiz_collections=quiz_collections)
+    recommended_quiz_collections = QuizCollection.query.order_by(QuizCollection.views.desc()).limit(12).all()
+    all_quiz_collections = QuizCollection.query.all()
+    return render_template('dashboard.html', 
+                           recommended_quiz_collections=recommended_quiz_collections,
+                           all_quiz_collections=all_quiz_collections,
+                           quiz_collections=all_quiz_collections)
 
-
-@main.route('/quiz/<int:quiz_id>')
+@main.route('/game_start', methods=['POST'])
 @login_required
-def quiz_detail(quiz_id):
-    quiz = Quiz.query.get_or_404(quiz_id)
-    return render_template('quiz_detail.html', quiz=quiz)
-
+def game_start():
+    quiz_id = request.args.get('quiz_id', type=int)
+    quiz_collection = QuizCollection.query.get(quiz_id)
+    if quiz_collection:
+        quiz_collection.views += 1
+        db.session.commit()
+    return render_template('game_start.html', quiz_id=quiz_id)
 
 
 
@@ -90,5 +96,10 @@ def logout():
     
     # 인덱스 페이지로 리다이렉트
     return redirect(url_for('main.index'))
+
+
+
+
+
 
 

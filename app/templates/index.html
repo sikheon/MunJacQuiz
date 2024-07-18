@@ -5,15 +5,93 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>먼작커.io</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
 
 </head>
 <body>
     <div class="logo">
         <img src="{{ url_for('static', filename='images/L1.png') }}" alt="MJQwiz Logo">
     </div>
-
+    <div class="stars">
+        <div class="star"></div>
+        <div class="star"></div>  <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>  <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>  <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>  <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>  <div class="star"></div>
+        <div class="star"></div><div class="star"></div>
+        <div class="star"></div>  <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>  <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>  <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>  <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>  <div class="star"></div>
+        <div class="star"></div><div class="star"></div>
+        <div class="star"></div>  <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>  <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>  <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>  <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>  <div class="star"></div>
+        <div class="star"></div><div class="star"></div>
+        <div class="star"></div>  <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>  <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>  <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>  <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>  <div class="star"></div>
+        <div class="star"></div><div class="star"></div>
+        <div class="star"></div>  <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>  <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>  <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>  <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>  <div class="star"></div>
+        <div class="star"></div><div class="star"></div>
+        <div class="star"></div>  <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>  <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>  <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>  <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>  <div class="star"></div>
+        <div class="star"></div>
+       
+       
+        <div class="star"></div>
+        <div class="star"></div>  <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>  <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>  <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>  <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>  <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+      </div>
     <form class="login-form" method="POST" action="{{ url_for('main.index') }}">
-        {{ form.hidden_tag() }}
+        {{ form.hidden_tag() }} 
         
         {{ form.email.label }}
         {{ form.email(class="form-control") }}

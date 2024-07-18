@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/game_start.css') }}">
+
+    <title>game_start</title>
+</head>
+<body>
+    <header>
+        <div class="logo">먼작커.io</div>
+        <div class="user-info">
+            <span id="username">user</span>
+            <a href="#" id="logout-button">Logout</a>
+        </div>
+    </header>
+    <div class="container">
+        <img id="game-image" src="" alt="이미지">
+        <div id="description"></div>
+        <button class="start-button" id="start-button">시작하기</button>
+    </div>
+
+    <script>
+        // URL 매개변수에서 값들을 가져와서 설정
+        function getQueryParameter(name) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(name);
+        }
+
+        document.addEventListener('DOMContentLoaded', function () {
+            const imagePath = getQueryParameter('image');
+            const name = getQueryParameter('name');
+            if (imagePath) {
+                document.getElementById('game-image').src = imagePath;
+            }
+            if (name) {
+                document.getElementById('description').innerText = name + ' 맞추기입니다.';
+            } else {
+                document.getElementById('description').innerText = '아이돌 맞추기입니다.';
+            }
+        });
+
+        // 로그아웃 버튼 클릭 이벤트 리스너 추가
+        document.getElementById('logout-button').addEventListener('click', function (event) {
+            event.preventDefault();
+            if (confirm('로그아웃되었습니다.')) {
+                window.location.href = 'login.html';
+            }
+        });
+
+        // 시작 버튼 클릭 이벤트 리스너 추가
+        document.getElementById('start-button').addEventListener('click', function () {
+            const imagePath = getQueryParameter('image');
+            const name = getQueryParameter('name');
+            window.location.href = `game_ing.html?image=${encodeURIComponent(imagePath)}&name=${encodeURIComponent(name)}`;
+        });
+    </script>
+</body>
+</html>

@@ -13,11 +13,11 @@
 <body>
     <header>
         <div class="logo">
+            <div class="user-info">
+                <span id="username">{{ session.get('nickname', 'User') }}</span>
+                <a href="{{ url_for('main.logout') }}" id="logout-button">Logout</a>
+            </div>
             <img src="{{ url_for('static', filename='images/L1.png') }}" alt="MJQwiz Logo">
-        </div>
-        <div class="user-info">
-            <span id="username">{{ session.get('nickname', 'User') }}</span>
-            <a href="{{ url_for('main.logout') }}" id="logout-button">Logout</a>
         </div>
         <div class="search-container">
             <form action="/search" method="GET">
@@ -30,147 +30,7 @@
             </form>
         </div>
     </header>
-    <!-- 메뉴바 삽입 -->
     <div class="content">
-        <div class="stars">
-            <div class="star"></div>
-  <!-- 반복 -->
-  <div class="star"></div><div class="star"></div>
-  <!-- 반복 -->
-  <div class="star"></div><div class="star"></div>
-  <!-- 반복 -->
-  <div class="star"></div><div class="star"></div>
-  <!-- 반복 -->
-  <div class="star"></div><div class="star"></div>
-  <!-- 반복 -->
-  <div class="star"></div><div class="star"></div>
-  <!-- 반복 -->
-  <div class="star"></div><div class="star"></div>
-  <!-- 반복 -->
-  <div class="star"></div><div class="star"></div>
-  <!-- 반복 -->
-  <div class="star"></div><div class="star"></div>
-  <!-- 반복 -->
-  <div class="star"></div><div class="star"></div>
-  <!-- 반복 -->
-  <div class="star"></div><div class="star"></div>
-  <!-- 반복 -->
-  <div class="star"></div><div class="star"></div>
-  <!-- 반복 -->
-  <div class="star"></div><div class="star"></div>
-  <!-- 반복 -->
-  <div class="star"></div><div class="star"></div>
-  <!-- 반복 -->
-  <div class="star"></div><div class="star"></div>
-  <!-- 반복 -->
-  <div class="star"></div><div class="star"></div>
-  <!-- 반복 -->
-  <div class="star"></div><div class="star"></div>
-  <!-- 반복 -->
-  <div class="star"></div><div class="star"></div>
-  <!-- 반복 -->
-  <div class="star"></div><div class="star"></div>
-  <!-- 반복 -->
-  <div class="star"></div><div class="star"></div>
-  <!-- 반복 -->
-  <div class="star"></div><div class="star"></div>
-  <!-- 반복 -->
-  <div class="star"></div><div class="star"></div>
-  <!-- 반복 -->
-  <div class="star"></div><div class="star"></div>
-  <!-- 반복 -->
-  <div class="star"></div><div class="star"></div>
-  <!-- 반복 -->
-  <div class="star"></div><div class="star"></div>
-  <!-- 반복 -->
-  <div class="star"></div><div class="star"></div>
-  <!-- 반복 -->
-  <div class="star"></div><div class="star"></div>
-  <!-- 반복 -->
-  <div class="star"></div><div class="star"></div>
-  <!-- 반복 -->
-  <div class="star"></div><div class="star"></div>
-  <!-- 반복 -->
-  <div class="star"></div><div class="star"></div>
-  <!-- 반복 -->
-  <div class="star"></div><div class="star"></div>
-  <!-- 반복 -->
-  <div class="star"></div><div class="star"></div>
-  <!-- 반복 -->
-  <div class="star"></div><div class="star"></div>
-  <!-- 반복 -->
-  <div class="star"></div><div class="star"></div>
-  <!-- 반복 -->
-  <div class="star"></div><div class="star"></div>
-  <!-- 반복 -->
-  <div class="star"></div><div class="star"></div>
-  <!-- 반복 -->
-  <div class="star"></div><div class="star"></div>
-  <!-- 반복 -->
-  <div class="star"></div><div class="star"></div>
-  <!-- 반복 -->
-  <div class="star"></div><div class="star"></div>
-  <!-- 반복 -->
-  <div class="star"></div><div class="star"></div>
-  <!-- 반복 -->
-  <div class="star"></div><div class="star"></div>
-  <!-- 반복 -->
-  <div class="star"></div><div class="star"></div>
-  <!-- 반복 -->
-  <div class="star"></div><div class="star"></div>
-  <!-- 반복 -->
-  <div class="star"></div>
-            <div class="star"></div>
-            <div class="star"></div>
-            <div class="star"></div>
-            <div class="star"></div>
-            <div class="star"></div>
-            <div class="star"></div>
-            <div class="star"></div>
-            <div class="star"></div>
-            <div class="star"></div>
-            <div class="star"></div>
-            <div class="star"></div>
-            <div class="star"></div>
-            <div class="star"></div>
-            <div class="star"></div>
-            <div class="star"></div>
-            <div class="star"></div>
-            <div class="star"></div>
-            <div class="star"></div>
-            <div class="star"></div>
-            <div class="star"></div>
-            <div class="star"></div>
-            <div class="star"></div>
-            <div class="star"></div>
-            <div class="star"></div>
-            <div class="star"></div>
-            <div class="star"></div>
-            <div class="star"></div>
-            <div class="star"></div>
-            <div class="star"></div>
-            <div class="star"></div>
-            <div class="star"></div>
-            <div class="star"></div>
-            <div class="star"></div>
-            <div class="star"></div>
-            <div class="star"></div>
-            <div class="star"></div>
-            <div class="star"></div>
-            <div class="star"></div>
-            <div class="star"></div>
-            <div class="star"></div>
-            <div class="star"></div>
-            <div class="star"></div>
-            <div class="star"></div>
-            <div class="star"></div>
-            <div class="star"></div>
-            <div class="star"></div>
-            <div class="star"></div>
-            <div class="star"></div>
-            <div class="star"></div>
-            <div class="star"></div>
-          </div>
         <div class="main-container">
             <div class="tabs">
                 <div class="underline"></div>
@@ -211,31 +71,65 @@
                     <span>북마크</span>
                 </div>
             </div>
-            
-            <h2 class="title-text">모든 맞추기</h2>
             <div id="recommended" class="cards">
+                <h2 class="title-text">맞추기 추천</h2>
                 <div id="cards-position">
-                    {% if quiz_collections %}
-                        {% for collection in quiz_collections %}
+                    {% if recommended_quiz_collections %}
+                        {% for collection in recommended_quiz_collections %}
                             <div class="card">
-                                <a href="{{ url_for('main.quiz_detail', quiz_id=collection.id) }}">
+                                <a href="{{ url_for('main.game_start', quiz_id=collection.id) }}">
                                     <div class="card-image">
                                         <img src="{{ url_for('static', filename=collection.thumbnail_url) }}" alt="{{ collection.name }}">
                                     </div>
                                     <p>{{ collection.name }}</p>
                                 </a>
                             </div>
-                        {% endfor %}
+                        {% endfor %}    
                     {% else %}
                         <p>텅 비었습니다</p>
                     {% endif %}
                 </div>
             </div>
-            
+            <div id="all" class="cards">
+                <h2 class="title-text">모든 맞추기</h2>
+                <div id="cards-position">
+                    {% if all_quiz_collections %}
+                        {% for collection in all_quiz_collections %}
+                            <div class="card">
+                                <a href="{{ url_for('main.game_start', quiz_id=collection.id) }}">
+                                    <div class="card-image">
+                                        <img src="{{ url_for('static', filename=collection.thumbnail_url) }}" alt="{{ collection.name }}">
+                                    </div>
+                                    <p>{{ collection.name }}</p>
+                                </a>
+                            </div>
+                        {% endfor %}    
+                    {% else %}
+                        <p>텅 비었습니다</p>
+                    {% endif %}
+                </div>
+            </div>
+            <div id="bookmarked" class="cards">
+                <h2 class="title-text">모든 맞추기</h2>
+                <div id="cards-position">
+                    {% if quiz_collections %}
+                        {% for collection in quiz_collections %}
+                            <div class="card">
+                                <a href="{{ url_for('main.game_start', quiz_id=collection.id) }}">
+                                    <div class="card-image">
+                                        <img src="{{ url_for('static', filename=collection.thumbnail_url) }}" alt="{{ collection.name }}">
+                                    </div>
+                                    <p>{{ collection.name }}</p>
+                                </a>
+                            </div>
+                        {% endfor %}    
+                    {% else %}
+                        <p>텅 비었습니다</p>
+                    {% endif %}
+                </div>
+            </div>
         </div>
-        
     </div>
-   
     <script src="{{ url_for('static', filename='js/main.js') }}"></script>
 </body>
 </html>

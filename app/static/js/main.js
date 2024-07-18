@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded", function() {
     const tabs = document.querySelectorAll(".tab");
     const underline = document.querySelector(".underline");
+    const cards = document.querySelectorAll(".cards");
 
     function setActiveTab(target) {
         // Remove active class from all tabs
@@ -13,9 +14,19 @@ document.addEventListener("DOMContentLoaded", function() {
         const rect = target.querySelector('span').getBoundingClientRect();
         underline.style.width = `${rect.width}px`;
         underline.style.left = `${target.offsetLeft + target.clientWidth / 2 - rect.width / 2}px`;
+
+        // Show the corresponding section and hide others
+        const targetSection = target.getAttribute("data-target");
+        cards.forEach(card => {
+            if (card.id === targetSection) {
+                card.style.display = "block";
+            } else {
+                card.style.display = "none";
+            }
+        });
     }
 
-    // Initialize the underline position
+    // Initialize the underline position and visible section
     const activeTab = document.querySelector(".tab.active");
     if (activeTab) {
         setActiveTab(activeTab);
